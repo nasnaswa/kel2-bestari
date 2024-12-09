@@ -7,6 +7,10 @@ abstract class Routes {
   static const ORDER = _Paths.ORDER;
   static const PEMESAN = _Paths.PEMESAN;
   static const HOMEPAGE = _Paths.HOMEPAGE;
+  static const MAKANAN = _Paths.MAKANAN;
+  static const MINUMAN = _Paths.MINUMAN;
+  static const DESKRIPSI = _Paths.DESKRIPSI;
+  static const KERANJANG = _Paths.KERANJANG;
 }
 
 abstract class _Paths {
@@ -15,4 +19,8 @@ abstract class _Paths {
   static const ORDER = '/order';
   static const PEMESAN = '/pemesan';
   static const HOMEPAGE = '/homepage';
+  static const MAKANAN = '/makanan';
+  static const MINUMAN = '/minuman';
+  static const DESKRIPSI = '/deskripsi';
+  static const KERANJANG = '/keranjang';
 }

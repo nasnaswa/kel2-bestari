@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../controllers/front_page_controller.dart';
 
 class FrontPageView extends GetView<FrontPageController> {
@@ -11,50 +10,53 @@ class FrontPageView extends GetView<FrontPageController> {
     return Scaffold(
       body: Stack(
         children: [
-          // Background image
+          // Background gradient
           Container(
             decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                    "assets/background.jpg"), // Ganti path sesuai file Anda
-                fit: BoxFit.cover,
+              gradient: LinearGradient(
+                colors: [
+                  Color(0xFFD2B48C), // cokelat terang
+                  Color.fromRGBO(139, 69, 19, 1), // cokelat gelap
+                ],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
               ),
             ),
           ),
+          // Container(
+          //   color: const Color.fromARGB(
+          //       255, 170, 118, 49), // Warna cokelat polos (tan)
+          // ),
           // Content
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Title
                 Text(
                   "Bestari Cafe",
                   style: TextStyle(
                     fontFamily: "Serif",
                     fontSize: 36,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black,
+                    color: const Color.fromARGB(255, 255, 255, 255),
                   ),
                 ),
                 const SizedBox(height: 8),
-                // Subtitle
                 Text(
-                  "Urusan Coffee\nKunjungi Bestari",
+                  "Urusan Coffee, Kunjungi Bestari",
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 18,
-                    color: Colors.black87,
+                    color: const Color.fromARGB(221, 255, 255, 255),
                   ),
                 ),
-                const SizedBox(height: 40),
-                // Next Button
+                const SizedBox(height: 15),
                 ElevatedButton(
                   onPressed: () {
-                    // Tambahkan logika navigasi di sini, jika perlu
-                    Get.toNamed('/nextPage'); // Contoh navigasi
+                    Get.toNamed('/order'); // Sesuaikan jika ada rute berikutnya
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
+                    backgroundColor: Color.fromRGBO(255, 255, 255, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -63,7 +65,10 @@ class FrontPageView extends GetView<FrontPageController> {
                     padding: EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                     child: Text(
                       "Next",
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(
+                        color: Color.fromRGBO(139, 69, 19, 1),
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ),
