@@ -83,13 +83,15 @@ class HomepageView extends StatelessWidget {
                 Expanded(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.brown[700],
+                      backgroundColor: Colors.white,
+                      foregroundColor: Colors.brown[700],
+                      side: BorderSide(color: Colors.brown[700]!),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                     onPressed: () {
-                      // Logika kategori Minuman
+                      Get.to(() => const MinumanView());// Logika kategori Minuman
                     },
                     child: const Text("Minuman"),
                   ),
