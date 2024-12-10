@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp/app/modules/makanan/views/makanan_view.dart';
+import 'package:myapp/app/modules/minuman/views/minuman_view.dart';
+import 'package:myapp/app/modules/deskripsi/views/deskripsi_view.dart'; // Import DeskripsiView
+
+
 
 void main() {
   runApp(const CoffeeApp());
@@ -11,7 +15,8 @@ class CoffeeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
+      // Ubah menjadi GetMaterialApp agar mendukung navigasi GetX
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.brown,
@@ -91,7 +96,7 @@ class HomepageView extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Get.to(() => const MinumanView());// Logika kategori Minuman
+                      Get.to(() => const MinumanView());
                     },
                     child: const Text("Minuman"),
                   ),
@@ -108,7 +113,7 @@ class HomepageView extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Get.to(() => const MakananView());// Logika kategori Makanan
+                      Get.to(() => const MakananView());
                     },
                     child: const Text("Makanan"),
                   ),
@@ -127,15 +132,15 @@ class HomepageView extends StatelessWidget {
             const SizedBox(height: 8),
             // Daftar menu (GridView)
             GridView.builder(
-              shrinkWrap: true, // Membatasi tinggi agar tidak konflik dengan SingleChildScrollView
-              physics: const NeverScrollableScrollPhysics(), // Disable scrolling pada GridView
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 8,
                 mainAxisSpacing: 8,
                 childAspectRatio: 0.75,
               ),
-              itemCount: 4, // Sesuaikan jumlah item
+              itemCount: 4,
               itemBuilder: (context, index) {
                 return CoffeeMenuCard(
                   title: index == 0
@@ -152,7 +157,10 @@ class HomepageView extends StatelessWidget {
                           : index == 2
                               ? "Rp 18.000"
                               : "Rp 15.000",
-                  imageUrl: "https://via.placeholder.com/150", // Ganti dengan URL asli
+                  imageUrl: "https://via.placeholder.com/150", // Ganti URL asli
+                  onTap: () {
+                    Get.to(() => const DeskripsiView());
+                  },
                 );
               },
             ),
@@ -189,49 +197,55 @@ class CoffeeMenuCard extends StatelessWidget {
   final String title;
   final String price;
   final String imageUrl;
+  final VoidCallback onTap;
 
   const CoffeeMenuCard({
     super.key,
     required this.title,
     required this.price,
     required this.imageUrl,
+    required this.onTap,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Column(
-        children: [
-          ClipRRect(
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(10)),
-            child: Image.network(
-              imageUrl,
-              height: 120,
-              width: double.infinity,
-              fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          children: [
+            ClipRRect(
+              borderRadius:
+                  const BorderRadius.vertical(top: Radius.circular(10)),
+              child: Image.network(
+                imageUrl,
+                height: 120,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: const TextStyle(fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  price,
-                  style: TextStyle(color: Colors.brown[600]),
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 4),
+                  Text(
+                    price,
+                    style: TextStyle(color: Colors.brown[600]),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
