@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:myapp/app/modules/makanan/views/makanan_view.dart';
 import 'package:myapp/app/modules/minuman/views/minuman_view.dart';
-import 'package:myapp/app/modules/deskripsi/views/deskripsi_view.dart'; // Import DeskripsiView
-
-
+import 'package:myapp/app/modules/deskripsi/views/deskripsi_view.dart';
+import 'package:myapp/app/modules/keranjang/views/keranjang_view.dart'; // Import KeranjangView
 
 void main() {
   runApp(const CoffeeApp());
@@ -16,7 +15,6 @@ class CoffeeApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      // Ubah menjadi GetMaterialApp agar mendukung navigasi GetX
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.brown,
@@ -44,7 +42,8 @@ class HomepageView extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.shopping_cart),
             onPressed: () {
-              // Logika ke keranjang
+              // Navigasi ke halaman keranjang
+              Get.to(() => const KeranjangView());
             },
           ),
         ],
@@ -54,7 +53,6 @@ class HomepageView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Pencarian dan filter
             Row(
               children: [
                 Expanded(
@@ -82,7 +80,6 @@ class HomepageView extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-            // Tombol kategori (Minuman & Makanan)
             Row(
               children: [
                 Expanded(
@@ -121,7 +118,6 @@ class HomepageView extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
-            // Judul "Best Seller"
             const Text(
               "Best Seller",
               style: TextStyle(
@@ -130,7 +126,6 @@ class HomepageView extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            // Daftar menu (GridView)
             GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
@@ -157,7 +152,7 @@ class HomepageView extends StatelessWidget {
                           : index == 2
                               ? "Rp 18.000"
                               : "Rp 15.000",
-                  imageUrl: "https://via.placeholder.com/150", // Ganti URL asli
+                  imageUrl: "https://via.placeholder.com/150",
                   onTap: () {
                     Get.to(() => const DeskripsiView());
                   },
@@ -165,7 +160,6 @@ class HomepageView extends StatelessWidget {
               },
             ),
             const SizedBox(height: 16),
-            // Tombol "Semua Menu"
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
@@ -192,7 +186,6 @@ class HomepageView extends StatelessWidget {
   }
 }
 
-// Widget kartu untuk menu kopi
 class CoffeeMenuCard extends StatelessWidget {
   final String title;
   final String price;

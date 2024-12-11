@@ -1,23 +1,48 @@
 import 'package:get/get.dart';
 
 class KeranjangController extends GetxController {
-  //TODO: Implement KeranjangController
+  // Daftar produk di keranjang
+  var cartItems = [
+    CartItem(title: "Hot Redvelvet", price: 20000, quantity: 1),
+    CartItem(title: "Coffee Aren", price: 17000, quantity: 1),
+    CartItem(title: "Tahu Crisbby", price: 15000, quantity: 1),
+  ].obs;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  // Menghitung total harga dan pajak
+  int get totalPrice {
+    return cartItems.fold(0, (sum, item) => sum + item.price * item.quantity);
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  double get tax {
+    return totalPrice * 0.02;
   }
 
-  @override
-  void onClose() {
-    super.onClose();
+  double get totalWithTax {
+    return totalPrice + tax;
   }
 
-  void increment() => count.value++;
+  // Menambah jumlah item di keranjang
+  void increaseQuantity(int index) {
+    cartItems[index].quantity++;
+  }
+
+  // Mengurangi jumlah item di keranjang
+  void decreaseQuantity(int index) {
+    if (cartItems[index].quantity > 1) {
+      cartItems[index].quantity--;
+    }
+  }
+}
+
+// Model untuk item keranjang
+class CartItem {
+  String title;
+  int price;
+  int quantity;
+
+  CartItem({
+    required this.title,
+    required this.price,
+    required this.quantity,
+  });
 }
