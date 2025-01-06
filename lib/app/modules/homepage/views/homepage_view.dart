@@ -28,7 +28,21 @@ class HomepageView extends StatelessWidget {
   const HomepageView({super.key});
 
   @override
-  Widget build(BuildContext context) {
+   Widget build(BuildContext context) {
+    // Daftar menu dipindahkan ke luar itemBuilder agar lebih efisien.
+    final menuItems = [
+      {"title": "Hot Red Velvet", "price": "Rp 20.000"},
+      {"title": "Peach Coffee", "price": "Rp 17.000"},
+      {"title": "Banana Coklat", "price": "Rp 18.000"},
+      {"title": "Sempol", "price": "Rp 15.000"},
+      {"title": "Capuccino", "price": "Rp 17.000"},
+      {"title": "Strawberry Field", "price": "Rp 18.000"},
+      {"title": "Peach Tea", "price": "Rp 18.000"},
+      {"title": "Hot Coffee Latte", "price": "Rp 20.000"},
+      {"title": "Bronis", "price": "Rp 6.000"},
+      {"title": "Donat", "price": "Rp 6.000"},
+    ];
+
     return Scaffold(
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
@@ -42,7 +56,6 @@ class HomepageView extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.shopping_cart),
             onPressed: () {
-              // Navigasi ke halaman keranjang
               Get.to(() => const KeranjangView());
             },
           ),
@@ -53,6 +66,7 @@ class HomepageView extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            // Pencarian
             Row(
               children: [
                 Expanded(
@@ -80,6 +94,8 @@ class HomepageView extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
+
+            // Kategori
             Row(
               children: [
                 Expanded(
@@ -118,8 +134,10 @@ class HomepageView extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 16),
+
+            // Daftar Menu
             const Text(
-              "Best Seller",
+              "All menu",
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
@@ -135,49 +153,17 @@ class HomepageView extends StatelessWidget {
                 mainAxisSpacing: 8,
                 childAspectRatio: 0.75,
               ),
-              itemCount: 4,
+              itemCount: menuItems.length, // Sesuai panjang menuItems
               itemBuilder: (context, index) {
                 return CoffeeMenuCard(
-                  title: index == 0
-                      ? "Hot Red Velvet"
-                      : index == 1
-                          ? "Peach Coffee"
-                          : index == 2
-                              ? "Banana Coklat"
-                              : "Sempol",
-                  price: index == 0
-                      ? "Rp 20.000"
-                      : index == 1
-                          ? "Rp 17.000"
-                          : index == 2
-                              ? "Rp 18.000"
-                              : "Rp 15.000",
+                  title: menuItems[index]["title"]!,
+                  price: menuItems[index]["price"]!,
                   imageUrl: "https://via.placeholder.com/150",
                   onTap: () {
                     Get.to(() => const DeskripsiView());
                   },
                 );
               },
-            ),
-            const SizedBox(height: 16),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.brown[700],
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-                onPressed: () {
-                  // Logika untuk semua menu
-                },
-                child: const Text(
-                  "Semua Menu",
-                  style: TextStyle(fontSize: 16, color: Colors.white),
-                ),
-              ),
             ),
           ],
         ),
