@@ -12,7 +12,7 @@ class DeskripsiView extends StatelessWidget {
     int quantity = 1; // Variabel lokal untuk jumlah
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Detail Produk'),
+        title: const Text('Detail Menu'),
         centerTitle: true,
         backgroundColor: Color(0xFF5A3826),
       ),
