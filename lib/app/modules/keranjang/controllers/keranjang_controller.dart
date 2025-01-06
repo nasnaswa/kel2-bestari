@@ -3,9 +3,13 @@ import 'package:get/get.dart';
 class KeranjangController extends GetxController {
   // Daftar produk di keranjang
   var cartItems = [
-    CartItem(title: "Hot Redvelvet", price: 20000, quantity: 1),
-    CartItem(title: "Coffee Aren", price: 17000, quantity: 1),
-    CartItem(title: "Tahu Crisbby", price: 15000, quantity: 1),
+    CartItem(
+        title: "Hot Redvelvet",
+        price: 20000,
+        quantity: 1,
+        imagePath: "assets/images/red.jpg"),
+    CartItem(title: "Coffee Aren", price: 17000, quantity: 1, imagePath: ""),
+    CartItem(title: "Tahu Crisbby", price: 15000, quantity: 1, imagePath: ""),
   ].obs;
 
   // Menghitung total harga dan pajak
@@ -39,10 +43,12 @@ class CartItem {
   String title;
   int price;
   int quantity;
+  String imagePath;
 
   CartItem({
     required this.title,
     required this.price,
     required this.quantity,
+    required this.imagePath,
   });
 }

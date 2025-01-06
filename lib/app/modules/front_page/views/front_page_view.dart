@@ -13,21 +13,12 @@ class FrontPageView extends GetView<FrontPageController> {
           // Background gradient
           Container(
             decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color(0xFFD2B48C), // cokelat terang
-                  Color.fromRGBO(139, 69, 19, 1), // cokelat gelap
-                ],
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
+              image: DecorationImage(
+                image: AssetImage('assets/images/background.jpg'), // Ganti dengan path aset gambar Anda
+                fit: BoxFit.cover, // Menyesuaikan gambar dengan layar
               ),
             ),
           ),
-          // Container(
-          //   color: const Color.fromARGB(
-          //       255, 170, 118, 49), // Warna cokelat polos (tan)
-          // ),
-          // Content
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

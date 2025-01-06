@@ -16,8 +16,12 @@ class PemesanView extends GetView<PemesanController> {
         children: [
           // Background dengan warna cokelat solid
           Container(
-            color: const Color.fromARGB(
-                255, 170, 118, 49), // Warna cokelat polos (tan)
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/background.jpg'), // Ganti dengan path aset gambar Anda
+                fit: BoxFit.cover, // Menyesuaikan gambar dengan layar
+              ),
+            ),
           ),
           // Konten
           Center(
@@ -28,7 +32,7 @@ class PemesanView extends GetView<PemesanController> {
                   "Nama Pemesan",
                   style: TextStyle(
                     fontSize: 18,
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 0, 0, 0),
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -67,7 +71,7 @@ class PemesanView extends GetView<PemesanController> {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 41, 23, 0),
+                    backgroundColor: Color.fromARGB(255, 255, 255, 255),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -77,7 +81,7 @@ class PemesanView extends GetView<PemesanController> {
                   child: const Text(
                     "Lanjut",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 0, 0, 0),
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),

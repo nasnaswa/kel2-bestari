@@ -13,8 +13,12 @@ class OrderView extends GetView<OrderController> {
         children: [
           // Background image
           Container(
-            color: const Color.fromARGB(
-                255, 170, 118, 49), // Warna cokelat polos (tan)
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/background.jpg'), // Ganti dengan path aset gambar Anda
+                fit: BoxFit.cover, // Menyesuaikan gambar dengan layar
+              ),
+            ),
           ),
           // Content
           Center(
@@ -35,7 +39,7 @@ class OrderView extends GetView<OrderController> {
                     Get.to(() => const PemesanView());
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 41, 23, 0),
+                    backgroundColor: Color.fromARGB(255, 0, 0, 0),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -46,6 +50,7 @@ class OrderView extends GetView<OrderController> {
                     "Take Away",
                     style: TextStyle(
                       color: Colors.white,
+                      fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),
                   ),
@@ -66,7 +71,7 @@ class OrderView extends GetView<OrderController> {
                     Get.to(() => const PemesanView());
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 41, 23, 0),
+                    backgroundColor: Color.fromARGB(255, 255, 255, 255),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -76,7 +81,8 @@ class OrderView extends GetView<OrderController> {
                   child: const Text(
                     "Dine In",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),
                   ),

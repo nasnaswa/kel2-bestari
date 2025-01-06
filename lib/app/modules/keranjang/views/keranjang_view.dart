@@ -27,16 +27,19 @@ class KeranjangView extends GetView<KeranjangController> {
                     title: "Hot Red Velvet",
                     price: "Rp 20.000",
                     quantity: 1,
+                    imagePath: "assets/images/red.jpg",
                   ),
                   KeranjangItem(
                     title: "Coffee Aren",
                     price: "Rp 17.000",
                     quantity: 1,
+                    imagePath: "assets/images/coffe.jpg",
                   ),
                   KeranjangItem(
                     title: "Tahu Crisby",
                     price: "Rp 15.000",
                     quantity: 1,
+                    imagePath: "assets/images/tahu.jpg",
                   ),
                 ],
               ),
@@ -122,12 +125,14 @@ class KeranjangItem extends StatelessWidget {
   final String title;
   final String price;
   final int quantity;
+  final String imagePath;
 
   const KeranjangItem({
     super.key,
     required this.title,
     required this.price,
     required this.quantity,
+    required this.imagePath,
   });
 
   @override
@@ -142,8 +147,8 @@ class KeranjangItem extends StatelessWidget {
             // Gambar produk
             ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
-              child: Image.network(
-                "https://via.placeholder.com/100", // Ganti dengan URL gambar
+              child: Image.asset(
+                imagePath, // Ganti dengan URL gambar
                 width: 60,
                 height: 60,
                 fit: BoxFit.cover,

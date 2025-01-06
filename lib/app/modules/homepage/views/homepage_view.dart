@@ -28,10 +28,14 @@ class HomepageView extends StatelessWidget {
   const HomepageView({super.key});
 
   @override
-   Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     // Daftar menu dipindahkan ke luar itemBuilder agar lebih efisien.
     final menuItems = [
-      {"title": "Hot Red Velvet", "price": "Rp 20.000", "imageUrl": "assets/images/red.jpg"},
+      {
+        "title": "Hot Red Velvet",
+        "price": "Rp 20.000",
+        "imageUrl": "assets/images/red.jpg"
+      },
       {"title": "Peach Coffee", "price": "Rp 17.000", "imageUrl": ""},
       {"title": "Banana Coklat", "price": "Rp 18.000", "imageUrl": ""},
       {"title": "Sempol", "price": "Rp 15.000", "imageUrl": ""},
@@ -52,14 +56,6 @@ class HomepageView extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.shopping_cart),
-            onPressed: () {
-              Get.to(() => const KeranjangView());
-            },
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
@@ -85,16 +81,14 @@ class HomepageView extends StatelessWidget {
                 ),
                 const SizedBox(width: 8),
                 IconButton(
-                  icon: const Icon(Icons.filter_alt),
-                  color: Colors.brown[700],
+                  icon: const Icon(Icons.shopping_cart),
                   onPressed: () {
-                    // Logika filter
+                    Get.to(() => const KeranjangView());
                   },
                 ),
               ],
             ),
             const SizedBox(height: 16),
-
             // Kategori
             Row(
               children: [
