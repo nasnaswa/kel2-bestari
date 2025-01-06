@@ -31,16 +31,16 @@ class HomepageView extends StatelessWidget {
    Widget build(BuildContext context) {
     // Daftar menu dipindahkan ke luar itemBuilder agar lebih efisien.
     final menuItems = [
-      {"title": "Hot Red Velvet", "price": "Rp 20.000"},
-      {"title": "Peach Coffee", "price": "Rp 17.000"},
-      {"title": "Banana Coklat", "price": "Rp 18.000"},
-      {"title": "Sempol", "price": "Rp 15.000"},
-      {"title": "Capuccino", "price": "Rp 17.000"},
-      {"title": "Strawberry Field", "price": "Rp 18.000"},
-      {"title": "Peach Tea", "price": "Rp 18.000"},
-      {"title": "Hot Coffee Latte", "price": "Rp 20.000"},
-      {"title": "Bronis", "price": "Rp 6.000"},
-      {"title": "Donat", "price": "Rp 6.000"},
+      {"title": "Hot Red Velvet", "price": "Rp 20.000", "imageUrl": "assets/images/red.jpg"},
+      {"title": "Peach Coffee", "price": "Rp 17.000", "imageUrl": ""},
+      {"title": "Banana Coklat", "price": "Rp 18.000", "imageUrl": ""},
+      {"title": "Sempol", "price": "Rp 15.000", "imageUrl": ""},
+      {"title": "Capuccino", "price": "Rp 17.000", "imageUrl": ""},
+      {"title": "Strawberry Field", "price": "Rp 18.000", "imageUrl": ""},
+      {"title": "Peach Tea", "price": "Rp 18.000", "imageUrl": ""},
+      {"title": "Hot Coffee Latte", "price": "Rp 20.000", "imageUrl": ""},
+      {"title": "Bronis", "price": "Rp 6.000", "imageUrl": ""},
+      {"title": "Donat", "price": "Rp 6.000", "imageUrl": ""},
     ];
 
     return Scaffold(
@@ -158,7 +158,7 @@ class HomepageView extends StatelessWidget {
                 return CoffeeMenuCard(
                   title: menuItems[index]["title"]!,
                   price: menuItems[index]["price"]!,
-                  imageUrl: "https://via.placeholder.com/150",
+                  imageUrl: menuItems[index]["imageUrl"]!,
                   onTap: () {
                     Get.to(() => const DeskripsiView());
                   },

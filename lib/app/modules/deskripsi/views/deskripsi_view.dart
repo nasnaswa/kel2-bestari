@@ -35,8 +35,8 @@ class DeskripsiView extends StatelessWidget {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.vertical(top: Radius.circular(15)),
-                child: Image.network(
-                  'https://via.placeholder.com/300x200', // Ganti dengan URL gambar Anda
+                child: Image.asset(
+                  'assets/images/red.jpg', // Ganti dengan URL gambar Anda
                   height: 200,
                   width: double.infinity,
                   fit: BoxFit.cover,
