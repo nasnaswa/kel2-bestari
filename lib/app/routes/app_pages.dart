@@ -14,6 +14,8 @@ import '../modules/minuman/bindings/minuman_binding.dart';
 import '../modules/minuman/views/minuman_view.dart';
 import '../modules/order/bindings/order_binding.dart';
 import '../modules/order/views/order_view.dart';
+import '../modules/pembayaran/bindings/pembayaran_binding.dart';
+import '../modules/pembayaran/views/pembayaran_view.dart';
 import '../modules/pemesan/bindings/pemesan_binding.dart';
 import '../modules/pemesan/views/pemesan_view.dart';
 
@@ -64,6 +66,11 @@ class AppPages {
       name: _Paths.KERANJANG,
       page: () => const KeranjangView(),
       binding: KeranjangBinding(),
+    ),
+    GetPage(
+      name: _Paths.PEMBAYARAN,
+      page: () => const PembayaranView(),
+      binding: PembayaranBinding(),
     ),
   ];
 }

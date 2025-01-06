@@ -11,6 +11,7 @@ abstract class Routes {
   static const MINUMAN = _Paths.MINUMAN;
   static const DESKRIPSI = _Paths.DESKRIPSI;
   static const KERANJANG = _Paths.KERANJANG;
+  static const PEMBAYARAN = _Paths.PEMBAYARAN;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const MINUMAN = '/minuman';
   static const DESKRIPSI = '/deskripsi';
   static const KERANJANG = '/keranjang';
+  static const PEMBAYARAN = '/pembayaran';
 }
