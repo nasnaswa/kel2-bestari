@@ -9,14 +9,18 @@ class MinumanView extends GetView<MinumanController> {
   Widget build(BuildContext context) {
     // Data menu makanan
     final items = [
-      {'image': 'assets/banana_chocolate.png', 'name': 'Banana Coklat', 'price': 'Rp 18.000'},
-      {'image': 'assets/tofu_crispy.png', 'name': 'Tahu Crisby', 'price': 'Rp 15.000'},
-      {'image': 'assets/donut.png', 'name': 'Donat', 'price': 'Rp 8.000'},
-      {'image': 'assets/indomie_rocket.png', 'name': 'Indomie Roket', 'price': 'Rp 18.000'},
-      {'image': 'assets/nachos.png', 'name': 'Nachos', 'price': 'Rp 22.000'},
-      {'image': 'assets/pancake.png', 'name': 'Pancake', 'price': 'Rp 25.000'},
-      {'image': 'assets/sandwich.png', 'name': 'Sandwich', 'price': 'Rp 20.000'},
-      {'image': 'assets/pizza.png', 'name': 'Pizza Slice', 'price': 'Rp 30.000'},
+      {'image': 'assets/images/Berry Tea.jpg', 'name': 'Berry Tea', 'price': 'Rp 15.000'},
+      {'image': 'assets/images/Coffe Aren.jpg', 'name': 'Coffe Aren', 'price': 'Rp 17.000'},
+      {'image': 'assets/images/Coffe Latte.jpg', 'name': 'Coffe Latte', 'price': 'Rp 18.000'},
+      {'image': 'assets/images/Coffe Pandan.jpg', 'name': 'Coffe Pandan', 'price': 'Rp 16.000'},
+      {'image': 'assets/images/Coffe Susu.jpg', 'name': 'Coffe Susu', 'price': 'Rp 16.000'},
+      {'image': 'assets/images/Espresso.jpg', 'name': 'Espresso', 'price': 'Rp 15.000'},
+      {'image': 'assets/images/Hot Coffe Latte.jpg', 'name': 'Hot Coffe Latte', 'price': 'Rp 18.000'},
+      {'image': 'assets/images/Peach Coffe.jpg', 'name': 'Peach Coffe', 'price': 'Rp 19.000'},
+      {'image': 'assets/images/Peach Tea.jpg', 'name': 'Peach Tea', 'price': 'Rp 17.000'},
+      {'image': 'assets/images/red.jpg', 'name': 'Hot Coffe Peach', 'price': 'Rp 17.000'},
+      {'image': 'assets/images/Strawberry Fields.jpg', 'name': 'Strawberry Fields', 'price': 'Rp 18.000'},
+      {'image': 'assets/images/Yakult Berry.jpg', 'name': 'Yakult Berry', 'price': 'Rp 19.000'},
     ];
 
     return Scaffold(
