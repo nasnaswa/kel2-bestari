@@ -9,14 +9,15 @@ class MakananView extends GetView<MakananController> {
   Widget build(BuildContext context) {
     // Data menu makanan
     final items = [
-      {'image': 'assets/banana_chocolate.png', 'name': 'Banana Coklat', 'price': 'Rp 18.000'},
-      {'image': 'assets/tofu_crispy.png', 'name': 'Tahu Crisby', 'price': 'Rp 15.000'},
-      {'image': 'assets/donut.png', 'name': 'Donat', 'price': 'Rp 8.000'},
-      {'image': 'assets/indomie_rocket.png', 'name': 'Indomie Roket', 'price': 'Rp 18.000'},
-      {'image': 'assets/nachos.png', 'name': 'Nachos', 'price': 'Rp 22.000'},
-      {'image': 'assets/pancake.png', 'name': 'Pancake', 'price': 'Rp 25.000'},
-      {'image': 'assets/sandwich.png', 'name': 'Sandwich', 'price': 'Rp 20.000'},
-      {'image': 'assets/pizza.png', 'name': 'Pizza Slice', 'price': 'Rp 30.000'},
+      {'image': 'assets/images/bronis.jpg', 'name': 'Bronis', 'price': 'Rp 7.000'},
+      {'image': 'assets/images/pisang.jpg', 'name': 'Pisang Goreng', 'price': 'Rp 5.000'},
+      {'image': 'assets/images/bolu.jpg', 'name': 'Bolu', 'price': 'Rp 8.000'},
+      {'image': 'assets/images/donat.jpg', 'name': 'Donat', 'price': 'Rp 8.000'},
+      {'image': 'assets/images/miekare.jpg', 'name': 'Indomie Kare', 'price': 'Rp 10.000'},
+      {'image': 'assets/images/mieroket.jpg', 'name': 'Indomie Roket', 'price': 'Rp 10.000'},
+      {'image': 'assets/images/otak-otak.jpg', 'name': 'Otak-Otak', 'price': 'Rp 5.000'},
+      {'image': 'assets/images/tahu.jpg', 'name': 'Tahu Goreng', 'price': 'Rp 5.000'},
+      {'image': 'assets/images/sempol.jpg', 'name': 'Sempol', 'price': 'Rp 5.000'},
     ];
 
     return Scaffold(
