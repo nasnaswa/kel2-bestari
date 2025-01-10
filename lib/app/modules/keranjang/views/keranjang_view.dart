@@ -85,30 +85,24 @@ class KeranjangView extends GetView<KeranjangController> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    child: const Text(
-                      "Kembali",
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    child: const Text("Kembali"),
                   ),
                 ),
                 const SizedBox(width: 8),
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
-                      // Logika tombol bayar
+                      // Navigasi ke metode pembayaran dengan total harga
+                      Get.toNamed('/pembayaran', arguments: {'total': 51000});
                     },
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                          Colors.brown[700], // Warna latar belakang
+                      backgroundColor: Colors.brown[700],
                       padding: const EdgeInsets.symmetric(vertical: 16),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
                     ),
-                    child: const Text(
-                      "Bayar",
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    child: const Text("Bayar"),
                   ),
                 ),
               ],
