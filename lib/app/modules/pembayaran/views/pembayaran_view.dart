@@ -1,22 +1,35 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 
-import '../controllers/pembayaran_controller.dart';
-
-class PembayaranView extends GetView<PembayaranController> {
+class PembayaranView extends StatelessWidget {
   const PembayaranView({super.key});
+
   @override
   Widget build(BuildContext context) {
+    final total = Get.arguments['total']; // Ambil data total harga
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text('PembayaranView'),
+        title: const Text('Metode Pembayaran'),
         centerTitle: true,
+        backgroundColor: Colors.brown,
       ),
-      body: const Center(
-        child: Text(
-          'PembayaranView is working',
-          style: TextStyle(fontSize: 20),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Total yang harus dibayar: Rp $total',
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                // Tambahkan logika pembayaran
+              },
+              child: const Text("Bayar Sekarang"),
+            ),
+          ],
         ),
       ),
     );
