@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:myapp/app/modules/front_page/views/front_page_view.dart';
 import 'package:myapp/app/modules/order/views/order_view.dart';
-import 'app/modules/front_page/views/front_page_view.dart';
+import 'package:myapp/app/modules/keranjang/views/keranjang_view.dart';
+import 'package:myapp/app/modules/pembayaran/views/pembayaran_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +33,14 @@ class MyApp extends StatelessWidget {
           name: '/order',
           page: () => const OrderView(),
         ),
-        // Tambahkan rute lain jika diperlukan
+        GetPage(
+          name: '/keranjang',
+          page: () => const KeranjangView(),
+        ),
+        GetPage(
+          name: '/pembayaran',
+          page: () => const PembayaranView(),
+        ),
       ],
     );
   }
