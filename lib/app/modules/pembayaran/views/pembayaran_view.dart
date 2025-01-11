@@ -9,29 +9,85 @@ class PembayaranView extends StatelessWidget {
     final total = Get.arguments['total']; // Ambil data total harga
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Metode Pembayaran'),
-        centerTitle: true,
-        backgroundColor: Colors.brown,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Total yang harus dibayar: Rp $total',
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      body: Stack(
+        children: [
+          // Background menggunakan asset
+          Container(
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage(
+                    'assets/images/background.jpg'), // Path ke asset lokal
+                fit: BoxFit.cover, // Mengatur gambar agar menyesuaikan layar
+              ),
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
+          ),
+          // Konten utama
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Total yang harus dibayar: Rp $total',
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors
+                        .white, // Pastikan teks terlihat di atas background
+                  ),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  onPressed: () {
+                    _showPaymentDialog(
+                        context, 'Silahkan scan QR untuk membayar.');
+                  },
+                  child: const Text("Bayar dengan QR"),
+                ),
+                const SizedBox(height: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    _showPaymentDialog(context, 'Silahkan bayar ke kasir.');
+                  },
+                  child: const Text("Bayar dengan Cash"),
+                ),
+              ],
+            ),
+          ),
+          Positioned(
+            top: 40, // Posisi dari atas
+            left: 10, // Posisi dari kiri
+            child: IconButton(
               onPressed: () {
-                // Tambahkan logika pembayaran
+                Get.back(); // Kembali ke halaman sebelumnya
               },
-              child: const Text("Bayar Sekarang"),
+              icon: const Icon(
+                Icons.arrow_back_ios, // Ikon panah ke kiri
+                color: Colors.white, // Warna ikon
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showPaymentDialog(BuildContext context, String message) {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          title: const Text('Informasi Pembayaran'),
+          content: Text(message),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text('OK'),
             ),
           ],
-        ),
-      ),
+        );
+      },
     );
   }
 }
