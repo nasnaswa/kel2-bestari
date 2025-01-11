@@ -9,9 +9,12 @@ class DeskripsiView extends StatelessWidget {
     int quantity = 1; // Variabel lokal untuk jumlah
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Detail Menu'),
+        title: const Text(
+          'Detail Menu',
+          style: TextStyle(color: Colors.white),
+        ),
         centerTitle: true,
-        backgroundColor: const Color(0xFF5A3826),
+        backgroundColor: Colors.brown[700],
       ),
       body: Center(
         child: SingleChildScrollView(
@@ -36,7 +39,7 @@ class DeskripsiView extends StatelessWidget {
                   ClipRRect(
                     borderRadius: const BorderRadius.vertical(top: Radius.circular(15)),
                     child: Image.asset(
-                      'assets/images/red.jpg', // Ganti dengan URL gambar Anda
+                      'assets/images/Berry Tea.jpg', // Ganti dengan URL gambar Anda
                       height: 200,
                       width: double.infinity,
                       fit: BoxFit.cover,
@@ -49,7 +52,7 @@ class DeskripsiView extends StatelessWidget {
                       children: [
                         Center(
                           child: Text(
-                            'Hot Red Velvet',
+                            'Berry Tea',
                             style: const TextStyle(
                               fontSize: 22,
                               fontWeight: FontWeight.bold,
@@ -93,7 +96,7 @@ class DeskripsiView extends StatelessWidget {
                         ),
                         const SizedBox(height: 4),
                         const Text(
-                          'Minuman Hot Red Velvet memikat pembeli dengan paduan sempurna antara rasa lembut krim dan sentuhan manis cokelat merah yang menggoda.',
+                          'Berry Tea adalah minuman teh yang disajikan dengan campuran berbagai jenis buah beri, seperti stroberi, blueberry, raspberry, atau blackberry. Minuman ini memiliki rasa yang segar, manis, dan sedikit asam, menjadikannya pilihan sempurna untuk dinikmati dalam suasana santai atau untuk menyegarkan hari.',
                           style: TextStyle(
                             fontSize: 14,
                             color: Color(0xFF5A3826),

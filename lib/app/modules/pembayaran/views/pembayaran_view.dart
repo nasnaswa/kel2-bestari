@@ -41,14 +41,44 @@ class PembayaranView extends StatelessWidget {
                     _showPaymentDialog(
                         context, 'Silahkan scan QR untuk membayar.');
                   },
-                  child: const Text("Bayar dengan QR"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 50, vertical: 15),
+                  ),
+                  child: const Text(
+                    "Bayar dengan QR",
+                    style: TextStyle(
+                      color: Colors.brown,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
                 const SizedBox(height: 10),
                 ElevatedButton(
                   onPressed: () {
                     _showPaymentDialog(context, 'Silahkan bayar ke kasir.');
                   },
-                  child: const Text("Bayar dengan Cash"),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 50, vertical: 15),
+                  ),
+                  child: const Text(
+                    "Bayar dengan Cash",
+                    style: TextStyle(
+                      color: Colors.brown,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ],
             ),

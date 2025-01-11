@@ -35,27 +35,111 @@ class _HomepageViewState extends State<HomepageView> {
   final TextEditingController _searchController = TextEditingController();
 
   final List<Map<String, String>> _menuItems = [
-    {"title": "Berry Tea", "price": "Rp 15.000", "imageUrl": "assets/images/Berry Tea.jpg"},
-  {"title": "Coffe Aren", "price": "Rp 17.000", "imageUrl": "assets/images/Coffe Aren.jpg"},
-  {"title": "Coffe Latte", "price": "Rp 18.000", "imageUrl": "assets/images/Coffe Latte.jpg"},
-  {"title": "Coffe Pandan", "price": "Rp 16.000", "imageUrl": "assets/images/Coffe Pandan.jpg"},
-  {"title": "Coffe Susu", "price": "Rp 16.000", "imageUrl": "assets/images/Coffe Susu.jpg"},
-  {"title": "Espresso", "price": "Rp 15.000", "imageUrl": "assets/images/Espresso.jpg"},
-  {"title": "Hot Coffe Latte", "price": "Rp 18.000", "imageUrl": "assets/images/Hot Coffe Latte.jpg"},
-  {"title": "Peach Coffe", "price": "Rp 19.000", "imageUrl": "assets/images/Peach Coffe.jpg"},
-  {"title": "Peach Tea", "price": "Rp 17.000", "imageUrl": "assets/images/Peach Tea.jpg"},
-  {"title": "Hot Coffe Peach", "price": "Rp 17.000", "imageUrl": "assets/images/red.jpg"},
-  {"title": "Strawberry Fields", "price": "Rp 18.000", "imageUrl": "assets/images/Strawberry Fields.jpg"},
-  {"title": "Yakult Berry", "price": "Rp 19.000", "imageUrl": "assets/images/Yakult Berry.jpg"},
-  {"title": "Bronis", "price": "Rp 7.000", "imageUrl": "assets/images/bronis.jpg"},
-  {"title": "Pisang Goreng", "price": "Rp 5.000", "imageUrl": "assets/images/pisang.jpg"},
-  {"title": "Bolu", "price": "Rp 8.000", "imageUrl": "assets/images/bolu.jpg"},
-  {"title": "Donat", "price": "Rp 8.000", "imageUrl": "assets/images/donat.jpg"},
-  {"title": "Indomie Kare", "price": "Rp 10.000", "imageUrl": "assets/images/miekare.jpg"},
-  {"title": "Indomie Roket", "price": "Rp 10.000", "imageUrl": "assets/images/mieroket.jpg"},
-  {"title": "Otak-Otak", "price": "Rp 5.000", "imageUrl": "assets/images/otak-otak.jpg"},
-  {"title": "Tahu Goreng", "price": "Rp 5.000", "imageUrl": "assets/images/tahu.jpg"},
-  {"title": "Sempol", "price": "Rp 5.000", "imageUrl": "assets/images/sempol.jpg"}
+    {
+      "title": "Berry Tea",
+      "price": "Rp 15.000",
+      "imageUrl": "assets/images/Berry Tea.jpg"
+    },
+    {
+      "title": "Coffe Aren",
+      "price": "Rp 17.000",
+      "imageUrl": "assets/images/Coffe Aren.jpg"
+    },
+    {
+      "title": "Coffe Latte",
+      "price": "Rp 18.000",
+      "imageUrl": "assets/images/Coffe Latte.jpg"
+    },
+    {
+      "title": "Coffe Pandan",
+      "price": "Rp 16.000",
+      "imageUrl": "assets/images/Coffe Pandan.jpg"
+    },
+    {
+      "title": "Coffe Susu",
+      "price": "Rp 16.000",
+      "imageUrl": "assets/images/Coffe Susu.jpg"
+    },
+    {
+      "title": "Espresso",
+      "price": "Rp 15.000",
+      "imageUrl": "assets/images/Espresso.jpg"
+    },
+    {
+      "title": "Hot Coffe Latte",
+      "price": "Rp 18.000",
+      "imageUrl": "assets/images/Hot Coffe Latte.jpg"
+    },
+    {
+      "title": "Peach Coffe",
+      "price": "Rp 19.000",
+      "imageUrl": "assets/images/Peach Coffe.jpg"
+    },
+    {
+      "title": "Peach Tea",
+      "price": "Rp 17.000",
+      "imageUrl": "assets/images/Peach Tea.jpg"
+    },
+    {
+      "title": "Hot Coffe Peach",
+      "price": "Rp 17.000",
+      "imageUrl": "assets/images/red.jpg"
+    },
+    {
+      "title": "Strawberry Fields",
+      "price": "Rp 18.000",
+      "imageUrl": "assets/images/Strawberry Fields.jpg"
+    },
+    {
+      "title": "Yakult Berry",
+      "price": "Rp 19.000",
+      "imageUrl": "assets/images/Yakult Berry.jpg"
+    },
+    {
+      "title": "Bronis",
+      "price": "Rp 7.000",
+      "imageUrl": "assets/images/bronis.jpg"
+    },
+    {
+      "title": "Pisang Goreng",
+      "price": "Rp 5.000",
+      "imageUrl": "assets/images/pisang.jpg"
+    },
+    {
+      "title": "Bolu",
+      "price": "Rp 8.000",
+      "imageUrl": "assets/images/bolu.jpg"
+    },
+    {
+      "title": "Donat",
+      "price": "Rp 8.000",
+      "imageUrl": "assets/images/donat.jpg"
+    },
+    {
+      "title": "Indomie Kare",
+      "price": "Rp 10.000",
+      "imageUrl": "assets/images/miekare.jpg"
+    },
+    {
+      "title": "Indomie Roket",
+      "price": "Rp 10.000",
+      "imageUrl": "assets/images/mieroket.jpg"
+    },
+    {
+      "title": "Otak-Otak",
+      "price": "Rp 5.000",
+      "imageUrl": "assets/images/otak-otak.jpg"
+    },
+    {
+      "title": "Tahu Goreng",
+      "price": "Rp 5.000",
+      "imageUrl": "assets/images/tahu.jpg"
+    },
+    {
+      "title": "Sempol",
+      "price": "Rp 5.000",
+      "imageUrl": "assets/images/sempol.jpg"
+    }
   ];
 
   List<Map<String, String>> _filteredMenuItems = [];
@@ -87,12 +171,16 @@ class _HomepageViewState extends State<HomepageView> {
     return Scaffold(
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
-        backgroundColor: Colors.brown[800],
-        title: const Text(
-          "IT'S COFFEE TIME!",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
+        backgroundColor: Colors.brown[700],
+        title: const Text("IT'S COFFEE TIME!",
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white)),
         centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back), // Ikon panah <
+          onPressed: () {
+            Navigator.of(context).pop(); // Kembali ke halaman sebelumnya
+          },
+        ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),

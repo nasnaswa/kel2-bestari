@@ -9,20 +9,55 @@ class MakananView extends GetView<MakananController> {
   Widget build(BuildContext context) {
     // Data menu makanan
     final items = [
-      {'image': 'assets/images/bronis.jpg', 'name': 'Bronis', 'price': 'Rp 7.000'},
-      {'image': 'assets/images/pisang.jpg', 'name': 'Pisang Goreng', 'price': 'Rp 5.000'},
+      {
+        'image': 'assets/images/bronis.jpg',
+        'name': 'Bronis',
+        'price': 'Rp 7.000'
+      },
+      {
+        'image': 'assets/images/pisang.jpg',
+        'name': 'Pisang Goreng',
+        'price': 'Rp 5.000'
+      },
       {'image': 'assets/images/bolu.jpg', 'name': 'Bolu', 'price': 'Rp 8.000'},
-      {'image': 'assets/images/donat.jpg', 'name': 'Donat', 'price': 'Rp 8.000'},
-      {'image': 'assets/images/miekare.jpg', 'name': 'Indomie Kare', 'price': 'Rp 10.000'},
-      {'image': 'assets/images/mieroket.jpg', 'name': 'Indomie Roket', 'price': 'Rp 10.000'},
-      {'image': 'assets/images/otak-otak.jpg', 'name': 'Otak-Otak', 'price': 'Rp 5.000'},
-      {'image': 'assets/images/tahu.jpg', 'name': 'Tahu Goreng', 'price': 'Rp 5.000'},
-      {'image': 'assets/images/sempol.jpg', 'name': 'Sempol', 'price': 'Rp 5.000'},
+      {
+        'image': 'assets/images/donat.jpg',
+        'name': 'Donat',
+        'price': 'Rp 8.000'
+      },
+      {
+        'image': 'assets/images/miekare.jpg',
+        'name': 'Indomie Kare',
+        'price': 'Rp 10.000'
+      },
+      {
+        'image': 'assets/images/mieroket.jpg',
+        'name': 'Indomie Roket',
+        'price': 'Rp 10.000'
+      },
+      {
+        'image': 'assets/images/otak-otak.jpg',
+        'name': 'Otak-Otak',
+        'price': 'Rp 5.000'
+      },
+      {
+        'image': 'assets/images/tahu.jpg',
+        'name': 'Tahu Goreng',
+        'price': 'Rp 5.000'
+      },
+      {
+        'image': 'assets/images/sempol.jpg',
+        'name': 'Sempol',
+        'price': 'Rp 5.000'
+      },
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Daftar Makanan'),
+        title: const Text(
+          'Daftar Makanan',
+          style: TextStyle(color: Colors.white),
+        ),
         centerTitle: true,
         backgroundColor: Colors.brown[700],
       ),
@@ -35,9 +70,11 @@ class MakananView extends GetView<MakananController> {
                 child: Column(
                   children: [
                     GridView.builder(
-                      physics: const NeverScrollableScrollPhysics(), // Non-scrollable karena di dalam SingleChildScrollView
+                      physics:
+                          const NeverScrollableScrollPhysics(), // Non-scrollable karena di dalam SingleChildScrollView
                       shrinkWrap: true,
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         childAspectRatio: 0.7,
                         crossAxisSpacing: 12,
@@ -47,7 +84,7 @@ class MakananView extends GetView<MakananController> {
                       itemBuilder: (context, index) {
                         final item = items[index];
                         return Card(
-                          color: const Color(0xFF432818),
+                          color: Colors.brown[700],
                           elevation: 4,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
@@ -57,7 +94,8 @@ class MakananView extends GetView<MakananController> {
                             children: [
                               Expanded(
                                 child: ClipRRect(
-                                  borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
+                                  borderRadius: const BorderRadius.vertical(
+                                      top: Radius.circular(12)),
                                   child: Image.asset(
                                     item['image']!,
                                     fit: BoxFit.cover,
@@ -80,7 +118,8 @@ class MakananView extends GetView<MakananController> {
                                     const SizedBox(height: 4),
                                     Text(
                                       item['price']!,
-                                      style: const TextStyle(fontSize: 14, color: Colors.orange),
+                                      style: const TextStyle(
+                                          fontSize: 14, color: Colors.orange),
                                     ),
                                   ],
                                 ),
@@ -100,12 +139,14 @@ class MakananView extends GetView<MakananController> {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.brown[700],
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)),
               ),
               onPressed: () {
                 Get.back(); // Navigasi kembali menggunakan GetX
               },
-              child: const Text('Kembali', style: TextStyle(color: Colors.white)),
+              child:
+                  const Text('Kembali', style: TextStyle(color: Colors.white)),
             ),
           ),
         ],

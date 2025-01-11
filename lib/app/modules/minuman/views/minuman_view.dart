@@ -9,23 +9,74 @@ class MinumanView extends GetView<MinumanController> {
   Widget build(BuildContext context) {
     // Data menu makanan
     final items = [
-      {'image': 'assets/images/Berry Tea.jpg', 'name': 'Berry Tea', 'price': 'Rp 15.000'},
-      {'image': 'assets/images/Coffe Aren.jpg', 'name': 'Coffe Aren', 'price': 'Rp 17.000'},
-      {'image': 'assets/images/Coffe Latte.jpg', 'name': 'Coffe Latte', 'price': 'Rp 18.000'},
-      {'image': 'assets/images/Coffe Pandan.jpg', 'name': 'Coffe Pandan', 'price': 'Rp 16.000'},
-      {'image': 'assets/images/Coffe Susu.jpg', 'name': 'Coffe Susu', 'price': 'Rp 16.000'},
-      {'image': 'assets/images/Espresso.jpg', 'name': 'Espresso', 'price': 'Rp 15.000'},
-      {'image': 'assets/images/Hot Coffe Latte.jpg', 'name': 'Hot Coffe Latte', 'price': 'Rp 18.000'},
-      {'image': 'assets/images/Peach Coffe.jpg', 'name': 'Peach Coffe', 'price': 'Rp 19.000'},
-      {'image': 'assets/images/Peach Tea.jpg', 'name': 'Peach Tea', 'price': 'Rp 17.000'},
-      {'image': 'assets/images/red.jpg', 'name': 'Hot Coffe Peach', 'price': 'Rp 17.000'},
-      {'image': 'assets/images/Strawberry Fields.jpg', 'name': 'Strawberry Fields', 'price': 'Rp 18.000'},
-      {'image': 'assets/images/Yakult Berry.jpg', 'name': 'Yakult Berry', 'price': 'Rp 19.000'},
+      {
+        'image': 'assets/images/Berry Tea.jpg',
+        'name': 'Berry Tea',
+        'price': 'Rp 15.000'
+      },
+      {
+        'image': 'assets/images/Coffe Aren.jpg',
+        'name': 'Coffe Aren',
+        'price': 'Rp 17.000'
+      },
+      {
+        'image': 'assets/images/Coffe Latte.jpg',
+        'name': 'Coffe Latte',
+        'price': 'Rp 18.000'
+      },
+      {
+        'image': 'assets/images/Coffe Pandan.jpg',
+        'name': 'Coffe Pandan',
+        'price': 'Rp 16.000'
+      },
+      {
+        'image': 'assets/images/Coffe Susu.jpg',
+        'name': 'Coffe Susu',
+        'price': 'Rp 16.000'
+      },
+      {
+        'image': 'assets/images/Espresso.jpg',
+        'name': 'Espresso',
+        'price': 'Rp 15.000'
+      },
+      {
+        'image': 'assets/images/Hot Coffe Latte.jpg',
+        'name': 'Hot Coffe Latte',
+        'price': 'Rp 18.000'
+      },
+      {
+        'image': 'assets/images/Peach Coffe.jpg',
+        'name': 'Peach Coffe',
+        'price': 'Rp 19.000'
+      },
+      {
+        'image': 'assets/images/Peach Tea.jpg',
+        'name': 'Peach Tea',
+        'price': 'Rp 17.000'
+      },
+      {
+        'image': 'assets/images/red.jpg',
+        'name': 'Hot Coffe Peach',
+        'price': 'Rp 17.000'
+      },
+      {
+        'image': 'assets/images/Strawberry Fields.jpg',
+        'name': 'Strawberry Fields',
+        'price': 'Rp 18.000'
+      },
+      {
+        'image': 'assets/images/Yakult Berry.jpg',
+        'name': 'Yakult Berry',
+        'price': 'Rp 19.000'
+      },
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Daftar Minuman'),
+        title: const Text(
+          'Daftar Minuman',
+          style: TextStyle(color: Colors.white),
+        ),
         centerTitle: true,
         backgroundColor: Colors.brown[700],
       ),
@@ -38,9 +89,11 @@ class MinumanView extends GetView<MinumanController> {
                 child: Column(
                   children: [
                     GridView.builder(
-                      physics: const NeverScrollableScrollPhysics(), // Non-scrollable karena di dalam SingleChildScrollView
+                      physics:
+                          const NeverScrollableScrollPhysics(), // Non-scrollable karena di dalam SingleChildScrollView
                       shrinkWrap: true,
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         childAspectRatio: 0.7,
                         crossAxisSpacing: 12,
@@ -50,7 +103,7 @@ class MinumanView extends GetView<MinumanController> {
                       itemBuilder: (context, index) {
                         final item = items[index];
                         return Card(
-                          color: const Color(0xFF432818),
+                          color: Colors.brown[700],
                           elevation: 4,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
@@ -60,7 +113,8 @@ class MinumanView extends GetView<MinumanController> {
                             children: [
                               Expanded(
                                 child: ClipRRect(
-                                  borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
+                                  borderRadius: const BorderRadius.vertical(
+                                      top: Radius.circular(12)),
                                   child: Image.asset(
                                     item['image']!,
                                     fit: BoxFit.cover,
@@ -83,7 +137,8 @@ class MinumanView extends GetView<MinumanController> {
                                     const SizedBox(height: 4),
                                     Text(
                                       item['price']!,
-                                      style: const TextStyle(fontSize: 14, color: Colors.orange),
+                                      style: const TextStyle(
+                                          fontSize: 14, color: Colors.orange),
                                     ),
                                   ],
                                 ),
@@ -103,12 +158,14 @@ class MinumanView extends GetView<MinumanController> {
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.brown[700],
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)),
               ),
               onPressed: () {
                 Get.back(); // Navigasi kembali menggunakan GetX
               },
-              child: const Text('Kembali', style: TextStyle(color: Colors.white)),
+              child:
+                  const Text('Kembali', style: TextStyle(color: Colors.white)),
             ),
           ),
         ],

@@ -57,7 +57,7 @@ class FrontPageView extends GetView<FrontPageController> {
                     child: Text(
                       "Next",
                       style: TextStyle(
-                        color: Color.fromRGBO(139, 69, 19, 1),
+                        color: Colors.brown,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

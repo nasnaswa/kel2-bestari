@@ -18,7 +18,8 @@ class PemesanView extends GetView<PemesanController> {
           Container(
             decoration: const BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/images/background.jpg'), // Ganti dengan path aset gambar Anda
+                image: AssetImage(
+                    'assets/images/background.jpg'), // Ganti dengan path aset gambar Anda
                 fit: BoxFit.cover, // Menyesuaikan gambar dengan layar
               ),
             ),
@@ -32,7 +33,7 @@ class PemesanView extends GetView<PemesanController> {
                   "Nama Pemesan",
                   style: TextStyle(
                     fontSize: 18,
-                    color: Color.fromARGB(255, 0, 0, 0),
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -81,7 +82,7 @@ class PemesanView extends GetView<PemesanController> {
                   child: const Text(
                     "Lanjut",
                     style: TextStyle(
-                      color: Color.fromARGB(255, 0, 0, 0),
+                      color: Colors.brown,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),

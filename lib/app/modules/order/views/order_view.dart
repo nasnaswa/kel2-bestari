@@ -39,7 +39,7 @@ class OrderView extends GetView<OrderController> {
                     Get.to(() => const PemesanView());
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 0, 0, 0),
+                    backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -49,7 +49,7 @@ class OrderView extends GetView<OrderController> {
                   child: const Text(
                     "Take Away",
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.brown,
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),
@@ -71,7 +71,7 @@ class OrderView extends GetView<OrderController> {
                     Get.to(() => const PemesanView());
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color.fromARGB(255, 255, 255, 255),
+                    backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -81,7 +81,7 @@ class OrderView extends GetView<OrderController> {
                   child: const Text(
                     "Dine In",
                     style: TextStyle(
-                      color: Color.fromARGB(255, 0, 0, 0),
+                      color: Colors.brown,
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
                     ),

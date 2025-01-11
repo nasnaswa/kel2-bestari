@@ -8,10 +8,10 @@ class KeranjangView extends GetView<KeranjangController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color(0xFF3e2723), // Warna coklat tua
+        backgroundColor: Colors.brown[700], // Warna coklat tua
         title: const Text(
           "Keranjang",
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
         centerTitle: true,
       ),
