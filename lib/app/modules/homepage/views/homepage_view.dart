@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:myapp/app/modules/makanan/views/makanan_view.dart';
 import 'package:myapp/app/modules/minuman/views/minuman_view.dart';
 import 'package:myapp/app/modules/deskripsi/views/deskripsi_view.dart';
-import 'package:myapp/app/modules/keranjang/views/keranjang_view.dart'; // Import KeranjangView
+import 'package:myapp/app/modules/keranjang/views/keranjang_view.dart';
 
 void main() {
   runApp(const CoffeeApp());
@@ -24,14 +24,18 @@ class CoffeeApp extends StatelessWidget {
   }
 }
 
-class HomepageView extends StatelessWidget {
+class HomepageView extends StatefulWidget {
   const HomepageView({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    // Daftar menu dipindahkan ke luar itemBuilder agar lebih efisien.
-    final menuItems = [
-     {"title": "Berry Tea", "price": "Rp 15.000", "imageUrl": "assets/images/Berry Tea.jpg"},
+  State<HomepageView> createState() => _HomepageViewState();
+}
+
+class _HomepageViewState extends State<HomepageView> {
+  final TextEditingController _searchController = TextEditingController();
+
+  final List<Map<String, String>> _menuItems = [
+    {"title": "Berry Tea", "price": "Rp 15.000", "imageUrl": "assets/images/Berry Tea.jpg"},
   {"title": "Coffe Aren", "price": "Rp 17.000", "imageUrl": "assets/images/Coffe Aren.jpg"},
   {"title": "Coffe Latte", "price": "Rp 18.000", "imageUrl": "assets/images/Coffe Latte.jpg"},
   {"title": "Coffe Pandan", "price": "Rp 16.000", "imageUrl": "assets/images/Coffe Pandan.jpg"},
@@ -52,8 +56,34 @@ class HomepageView extends StatelessWidget {
   {"title": "Otak-Otak", "price": "Rp 5.000", "imageUrl": "assets/images/otak-otak.jpg"},
   {"title": "Tahu Goreng", "price": "Rp 5.000", "imageUrl": "assets/images/tahu.jpg"},
   {"title": "Sempol", "price": "Rp 5.000", "imageUrl": "assets/images/sempol.jpg"}
-    ];
+  ];
 
+  List<Map<String, String>> _filteredMenuItems = [];
+
+  @override
+  void initState() {
+    super.initState();
+    _filteredMenuItems = _menuItems; // Awalnya tampilkan semua menu
+    _searchController.addListener(_filterMenu);
+  }
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  void _filterMenu() {
+    final query = _searchController.text.toLowerCase();
+    setState(() {
+      _filteredMenuItems = _menuItems
+          .where((menu) => menu["title"]!.toLowerCase().contains(query))
+          .toList();
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.brown[100],
       appBar: AppBar(
@@ -74,6 +104,7 @@ class HomepageView extends StatelessWidget {
               children: [
                 Expanded(
                   child: TextField(
+                    controller: _searchController,
                     decoration: InputDecoration(
                       hintText: "Cari di sini",
                       prefixIcon: const Icon(Icons.search),
@@ -154,12 +185,12 @@ class HomepageView extends StatelessWidget {
                 mainAxisSpacing: 8,
                 childAspectRatio: 0.75,
               ),
-              itemCount: menuItems.length, // Sesuai panjang menuItems
+              itemCount: _filteredMenuItems.length,
               itemBuilder: (context, index) {
                 return CoffeeMenuCard(
-                  title: menuItems[index]["title"]!,
-                  price: menuItems[index]["price"]!,
-                  imageUrl: menuItems[index]["imageUrl"]!,
+                  title: _filteredMenuItems[index]["title"]!,
+                  price: _filteredMenuItems[index]["price"]!,
+                  imageUrl: _filteredMenuItems[index]["imageUrl"]!,
                   onTap: () {
                     Get.to(() => const DeskripsiView());
                   },
